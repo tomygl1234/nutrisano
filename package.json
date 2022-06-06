@@ -1,0 +1,35 @@
+{
+  "name": "nutrisano",
+  "version": "1.0.0",
+  "description": "Nutrisano tienda de productos orgánicos",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomygl1234/nutrisano.git"
+  },
+  "keywords": [
+    "sass",
+    "gulp",
+    "ecomerse"
+  ],
+  "author": "Tomás",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomygl1234/nutrisano/issues"
+  },
+  "homepage": "https://github.com/tomygl1234/nutrisano#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-avif": "^1.1.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.52.2"
+  }
+}

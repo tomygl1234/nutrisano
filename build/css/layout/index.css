@@ -1,0 +1,67 @@
+.header-container {
+  background-color: #005353;
+}
+
+.site-header, .navegacion-principal {
+  display: flex;
+  flex-direction: row;
+  gap: 10rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header {
+  position: relative;
+  width: 80%;
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 20rem;
+  margin-top: -1.27rem;
+  z-index: 1;
+}
+
+.navegacion-principal a {
+  color: #fff;
+  font-size: 1.8rem;
+}
+.navegacion-principal a:hover {
+  color: #FDBD01;
+}
+
+.portada-container {
+  width: 100%;
+  height: 60rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/src/img/portada-imagen.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 8rem;
+}
+
+.portada-container h1 span {
+  color: #FDBD01;
+}
+
+.nosotros-container {
+  height: auto;
+  width: 100%;
+}

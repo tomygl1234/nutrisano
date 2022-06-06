@@ -1,0 +1,30 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.portada-container{
+    width: 100%;
+    height: 60rem;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.250), rgba(0, 0, 0, 0.250)), url(/src/img/portada-imagen.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    text-align: center;
+    
+}
+h1{
+    font-family: v.$fuente_principal;
+    font-size: 4rem;
+    font-weight: 700;
+    color: v.$blanco;
+    line-height: 8rem;
+}
+.portada-container h1 span{
+    color: v.$amarillo;
+}
+
+
+

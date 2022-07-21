@@ -16,39 +16,142 @@
 <body>
    <div class="header-container">
     <header class="header site-header">
-        <div class="logo-container">
+       
             <a href="index.html">
             <picture>
-                <source srcset="build/img/logo-header.avif" type="image/avif">
                 <source srcset="build/img/logo-header.webp" type="image/webp">
-                <img loading="lazy" width="200" height="300" src="build/img/logo-header.png" alt="logo nutrisano" class="logo">
+                <img loading="lazy" width="200" height="300" src="build/img/logo-header.png" alt="logo de nutrisano" class="logo">
             </picture>
         </a>
+       
+        <a href=""><img src="build/img/shoping-cart.svg" class="carrito cart-mobile" alt="imagen carrito de compras "></a>
+
+        <div class="mobile-menu">
+            <img src="build/img/menu.svg" alt="imagen menu mobile">
         </div>
+
+        
         
         <nav class="navegacion-principal">
             <a href="#" class="nav-link">Inicio</a>
             <a href="#" class="nav-link">Nosotros</a>
             <a href="#" class="nav-link">Tienda</a>
             <a href="#" class="nav-link">Contacto</a>
+            <a href=""><img src="build/img/shoping-cart.svg" class="carrito cart-desktop" alt="imagen carrito de compras "></a>
         </nav>
+        
     </header>
    </div> 
    <section class="portada-container">
-        <h1> <span>"</span>Alimentación saludable, natural y sustentable<br>A la puerta de tu casa<span>"</span></h1>
-        <a class="boton-primario" href="#">"Quiero hacer mi pedido"</a>
+        <h1>Alimentación natural, saludable y sustentable a la puerta de tu casa</h1>
+        <a class="boton-primario" href="#">"Hacer mi pedido a domicilio"</a>
    </section>
-   <section class="nosotros-container">
-    
-    <!-- <a class="boton-secundario" href="#">"Quiero hacer mi pedido"</a> -->
-   </section>
+ 
+
+   <!-- Empieza Main-->
+<main>
+
+    <section class="contenedor sec-productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos">
+
+            <div class="producto">
+                <h3>Fruta</h3>
+                <div class="producto_img">
+                    <img loading="lazy" src="build/img/producto-fruta.webp" alt="imagen producto">
+                    <p>Precio por kg: 250$</p>
+                </div>
+                <a href="#" class="boton-primario">Ver más</a>
+            </div>
+            
+            <div class="producto">
+                <h3>Verdura</h3>
+                <div class="producto_img">
+                    <img loading="lazy" src="build/img/producto-verdura.webp" alt="imagen producto">
+                    <p>Precio por kg: 250$</p>
+                </div>
+                <a href="#" class="boton-primario">Ver más</a>
+            </div>
+            
+            <div class="producto">
+                <h3>Especias</h3>
+                <div class="producto_img">
+                    <img loading="lazy" src="build/img/producto-especias.webp" alt="imagen producto">
+                    <p>Precio por kg: 250$</p>
+                </div>
+                <a href="#" class="boton-primario">Ver más</a>
+            </div>
+            
+            <div class="producto">
+                <h3>Berenjena</h3>
+                <div class="producto_img">
+                    <img loading="lazy" src="build/img/contenido/img11.webp" alt="imagen producto">
+                    <p>Precio por kg: 250$</p>
+                </div>
+                <a href="#" class="boton-primario">Ver más</a>
+            </div>
+            
+            <div class="producto">
+                <h3>Berenjena</h3>
+                <div class="producto_img">
+                    <img loading="lazy" src="build/img/contenido/img11.webp" alt="imagen producto">
+                    <p>Precio por kg: 250$</p>
+                </div>
+                <a href="#" class="boton-primario">Ver más</a>
+            </div>
+            
+            <div class="producto">
+                <h3>Berenjena</h3>
+                <div class="producto_img">
+                    <img loading="lazy" src="build/img/contenido/img11.webp" alt="imagen producto">
+                    <p>Precio por kg: 250$</p>
+                </div>
+                <a href="#" class="boton-primario">Ver más</a>
+            </div>
+
+    </section>
+
+    <!--  Seccion de Marcas  -->
+
+    <section class="marcas">
+        <div class="contenedor contenedor_marcas">
+            <picture>
+                <source srcset="build/img/marca1.webp" type="image/webp">
+                <img class="marca_img" loading="lazy" width="200" height="300" src="marca1.png" alt="marca de productos con los que trabajamos">
+            </picture>
+
+            <picture>
+                <source srcset="build/img/marca2.webp" type="image/webp">
+                <img class="marca_img" loading="lazy" width="200" height="300" src="marca2.png" alt="marca de productos con los que trabajamos">
+            </picture>
+
+            <picture>
+                <source srcset="build/img/marca3.webp" type="image/webp">
+                <img class="marca_img" loading="lazy" width="200" height="300" src="marca3.png" alt="marca de productos con los que trabajamos">
+            </picture>
+
+            <picture>
+                <source srcset="build/img/marca4.webp" type="image/webp">
+                <img class="marca_img" loading="lazy" width="200" height="300" src="marca4.png" alt="marca de productos con los que trabajamos">
+            </picture>
+        </div>
+    </section>
+
+</main>
+   
 
 
-
-
-    <footer class="footer site-footer">
-
+    <footer class="footer">
+        <section class="contenedor">
+            <nav class="navegacion-principal footer-nav">
+            <a href="#" class="nav-link">Inicio</a>
+            <a href="#" class="nav-link">Nosotros</a>
+            <a href="#" class="nav-link">Tienda</a>
+            <a href="#" class="nav-link">Contacto</a>
+        </nav>
+        <p class="copyright"> Todos los derechos reservados&copy;2022</p> 
+        </section>
     </footer>
-    <script src="src/js/app.js"></script>
+    <script src="build/js/bundle.min.js"></script>
 </body>
 </html>

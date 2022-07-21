@@ -1,6 +1,3 @@
-@use 'variables' as v;
-@use 'mixins' as m;
-
 html{
     box-sizing: border-box;
     font-size:62.5% /*1 px = 1rem*/
@@ -10,12 +7,12 @@ html{
 }
 
 body{
-    font-family: v.$fuente_principal;
+    font-family: $fuente_principal;
     font-size: 1.6rem;
 }
 p{
     font-size: 2rem;
-    color: v.$negro;
+    color: $negro;
     line-height: 1.5;
 }
 .contenedor{
@@ -27,12 +24,13 @@ a{
     text-decoration: none;
 }
 h1, h2, h3{
-    margin: 0 0 5rem 0;
+    margin: 0 0 3rem 0;
 }
 h1{
     font-size: 4rem;
 }
 h2{
+    margin-top: 3rem;
     font-size: 3.6rem;
 }
 h3{
@@ -41,30 +39,4 @@ h3{
 
 img {
     width: 100%;
-}
-.boton-primario{
-    background-color: v.$salmon;
-    padding: 3rem;
-    border-radius: 15rem;
-    width: 30%;
-    color: v.$blanco;
-    margin: 0 auto;
-    font-size: larger;
-
-    &:hover{
-        background-color: v.$amarillo;
-    }
-}
-.boton-secundario{
-    background-color: v.$verdeos;
-    padding: 3rem;
-    border-radius: 15rem;
-    width: 30%;
-    color: v.$blanco;
-    margin: 0 auto;
-    font-size: larger;
-
-    &:hover{
-        background-color: v.$amarillo;
-    }
 }

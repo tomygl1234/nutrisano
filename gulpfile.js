@@ -1,68 +1,68 @@
 //Es para automatizar tareas
 //gulp
-const { src, dest, watch, parallel } = require("gulp");
-//css
-const sass = require("gulp-sass")(require("sass"));
-const plumber = require("gulp-plumber");
-//imagenes
-const cache = require("gulp-cache");
-const imagemin = require("gulp-imagemin");
-const webp = require("gulp-webp");
-const avif = require("gulp-avif");
+const { src, dest, watch, series, parallel } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('autoprefixer');
+const postcss = require('gulp-postcss')
+const sourcemaps = require('gulp-sourcemaps')
+const cssnano = require('cssnano');
+const concat = require('gulp-concat');
+const terser = require('gulp-terser-js');
+const rename = require('gulp-rename');
+const imagemin = require('gulp-imagemin'); // Minificar imagenes 
+const notify = require('gulp-notify');
+const cache = require('gulp-cache');
+const clean = require('gulp-clean');
+const webp = require('gulp-webp');
 
-
-
-function css(done) {
-  //identificar el archivo de SASS
-  src("src/scss/**/*.scss")
-    //compilarlo
-    .pipe(plumber())
-    .pipe(sass())
-  //Almacenarlo en el disco duro
-    .pipe(dest("build/css"))
-  done();
-};
-function imagenes(done){
-  const opciones = {
-    optimizationLevel : 3
-  }
-  src('src/img/**/*.{png, jpg}')
-    .pipe( cache( imagemin()))
-    .pipe( dest('build/img'))
-  done();
-}
-function versionWebp(done){
-  
-  const opciones = {
-    quality : 50
-  };
-  
-  src('src/img/**/*.{png, jpg}')
-    .pipe( webp(opciones) )
-    .pipe( dest('build/img'))
-  done();
+const paths = {
+    scss: 'src/scss/**/*.scss',
+    js: 'src/js/**/*.js',
+    imagenes: 'src/img/**/*'
 }
 
-function versionAvif(done){
-  
-  const opciones = {
-    quality : 50
-  };
-  
-  src('src/img/**/*.{png, jpg}')
-    .pipe( avif(opciones) )
-    .pipe( dest('build/img'))
-  done();
+function css() {
+    return src(paths.scss)
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        // .pipe(postcss([autoprefixer()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest('build/css'));
+}
+
+function javascript() {
+    return src(paths.js)
+      .pipe(sourcemaps.init())
+      .pipe(concat('bundle.js'))
+      .pipe(terser())
+      .pipe(sourcemaps.write('.'))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(dest('./build/js'))
+}
+
+function imagenes() {
+    return src(paths.imagenes)
+        .pipe(cache(imagemin({ optimizationLevel: 3 })))
+        .pipe(dest('build/img'))
+        .pipe(notify({ message: 'Imagen Completada' }));
+}
+
+function versionWebp() {
+    return src(paths.imagenes)
+        .pipe(webp())
+        .pipe(dest('build/img'))
+        .pipe(notify({ message: 'Imagen Completada' }));
 }
 
 
-function dev(done){
-    watch('src/scss/**/*.scss', css);
-    done();
+function watchArchivos() {
+    watch(paths.scss, css);
+    watch(paths.js, javascript);
+    watch(paths.imagenes, imagenes);
+    watch(paths.imagenes, versionWebp);
 }
 
 exports.css = css;
-exports.imagenes = imagenes;
-exports.versionWebp = versionWebp;
-exports.versionAvif = versionAvif;
-exports.dev = parallel(imagenes, versionWebp, versionAvif, dev);
+exports.watchArchivos = watchArchivos;
+exports.default = parallel(css, javascript, imagenes, versionWebp, watchArchivos); 

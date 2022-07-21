@@ -1,0 +1,45 @@
+.sec-productos{
+    text-align: center;
+    color: $blanco;
+}
+.productos{
+    @include telefono{
+        @include grid(2, 1rem);
+        margin: 3rem;
+    }
+    @include tablet {
+        @include grid(3, 2rem);
+        margin: 3rem;
+    }
+    @include grid(1, 1rem);
+    margin: 1rem;
+    height: auto;
+
+    .producto{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        
+        .boton-primario{
+           width: 100%;     
+        }
+        h3{
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1;
+        }
+        
+    }
+}
+.producto_img{
+    position: relative;
+    p{
+        position: absolute;
+        left: 2rem;
+        bottom: 0;
+        color: $blanco;
+        z-index: 2;
+    }
+}
+

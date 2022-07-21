@@ -1,0 +1,14 @@
+.marcas{
+    margin: 10rem 0 ;
+}
+.contenedor_marcas{
+    @include grid(4, 2rem);
+    align-items: center;
+    
+
+    .marca_img{
+        width: 30rem;
+        height: 30rem;
+
+    }
+}

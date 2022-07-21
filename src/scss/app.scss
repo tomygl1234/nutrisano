@@ -1,2 +1,15 @@
-@use 'base';
-@use 'layout';
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/globales';
+@import 'base/utilidades';
+@import 'base/botones';
+
+/**     UI     **/
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/nosotros';
+@import 'layout/portada';
+@import 'layout/productos';
+@import 'layout/marcas';
